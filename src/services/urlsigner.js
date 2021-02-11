@@ -39,8 +39,7 @@ export default {
     var handler = (is_sending_s3) ? this.setResponseHandler : this.sendS3Handler;
 
     return this.getSignedURL(file, config)
-      .then((response) => {return handler(response, file)})
-      .catch((error) => { return error; });
+      .then((response) => {return handler(response, file)});
   },
   setResponseHandler(response, file) {
     file.s3Signature = response.signature;

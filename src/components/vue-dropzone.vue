@@ -417,8 +417,8 @@ export default {
           setTimeout(() => this.dropzone.processFile(file));
         });
       }
-      promise.catch(error => {
-        alert(error);
+      promise.catch( () => {
+        $emit("vdropzone-s3-upload-error","Network Error : Error getting signedURL.");
       });
     },
     setAWSSigningURL(location) {
