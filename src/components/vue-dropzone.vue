@@ -418,7 +418,10 @@ export default {
         });
       }
       promise.catch( () => {
-        $emit("vdropzone-s3-upload-error","Network Error : Error getting signedURL.");
+        this.$emit(
+          "vdropzone-s3-upload-error",
+          "Network Error : Error getting signedURL."
+        );
       });
     },
     setAWSSigningURL(location) {
